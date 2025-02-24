@@ -63,13 +63,13 @@ end_date = pd.to_datetime(end_date)
 main_df = all_df[(all_df['datetime'] >= start_date) & (all_df['datetime'] <= end_date)]
 main_df = main_df[(main_df['datetime'].dt.hour >= start_hour) & (main_df['datetime'].dt.hour <= end_hour)]
 
-if selected_station != 'All':
+if selected_station != 'Semua':
     main_df = main_df[main_df['station'] == selected_station]
 
 st.header('Dashboard Analisis Kualitas Udara')
 st.subheader(f'Data Kualitas Udara (2013 - 2017) - {selected_station} Stasiun')
 
-if selected_station == 'All':
+if selected_station == 'Semua':
     highest_avg_station, highest_avg_value = get_highest_avg_station(all_df)
     air_quality_status = get_categorical_avg_station(highest_avg_value)
     col1, col2, col3 = st.columns(3)
@@ -119,7 +119,7 @@ else:
     st.warning("Tidak ada data untuk ditampilkan pada heatmap.")
 
 st.subheader("Analisis Kualitas Udara dalam 24 Jam (Per Stasiun)")
-if selected_station != 'All':
+if selected_station != 'Semua':
     hourly_avg_station = get_hourly_value(main_df)
     fig, ax = plt.subplots(figsize=(12, 6))
     sns.barplot(data=hourly_avg_station, x='hour', y='PM2.5', palette='coolwarm', ax=ax)
