@@ -55,7 +55,7 @@ with st.sidebar:
     )
     
     station_list = all_df['station'].unique().tolist()
-    selected_station = st.selectbox('Location', ['All'] + station_list)
+    selected_station = st.selectbox('Lokasi', ['Semua'] + station_list)
 
 start_date = pd.to_datetime(start_date)
 end_date = pd.to_datetime(end_date)
