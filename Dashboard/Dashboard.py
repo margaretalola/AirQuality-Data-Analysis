@@ -28,7 +28,7 @@ def get_hourly_value(df):
     hourly_avg = df.groupby(['year', 'month', 'day', 'hour', 'station'])[['PM2.5']].mean().reset_index()
     return hourly_avg
     
-all_df = pd.read_csv('all_data_air_quality.csv')
+all_df = pd.read_csv('Dashboard/all_data_air_quality.csv')
 all_df['datetime'] = pd.to_datetime(all_df['datetime'])
 all_df['year'] = all_df['datetime'].dt.year
 all_df['month'] = all_df['datetime'].dt.month
