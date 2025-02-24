@@ -15,7 +15,7 @@ Proyek ini bertujuan untuk melakukan analisis pada data kualitas udara menggunak
         pip install --upgrade pip
         pip install -r requirements.txt
 
-3.  Jalankan perintah `streamlit run app.py` untuk menjalankan dashboard
+3.  Jalankan perintah `streamlit run Dashboard.py` untuk menjalankan dashboard
 
 ## Akses Dashboard
 
