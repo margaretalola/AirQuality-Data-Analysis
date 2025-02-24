@@ -6,5 +6,3 @@ streamlit: 1.38.0
 geopandas: 1.0.1
 folium: 0.19.4
 streamlit_folium: 0.24.0
-
-
